@@ -7,7 +7,7 @@ HispaBlogs is a new collection of Spanish blogs from five different countries: A
 The Autoritas team has censused blogs from different Spanish speaking countries. Posts from the census were retrieved from January 2014. The process was the following:
 
 - The RSS content was retrieved
-- The permalink was scrapped, the contents were cleaned and the html removed
+- The permalink was scraped, the contents were cleaned and the html removed
 - The language was automatically identified and contents in different language than Spanish were removed
 - Posts with less than 10 words were removed
 - The number of posts per blog were limited between 1 and 10
