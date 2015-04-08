@@ -25,8 +25,8 @@ E.g. /en/0b376c2d7e70824e2bee6fdc474663ab_es.xml
 
 ### File Format
 
-<author id=”MD5” url=”URL” feed=”FEED” country=”ISO 3166-2”>
-	<documents count=”N”> 
+`<author id=”MD5” url=”URL” feed=”FEED” country=”ISO 3166-2”>
+``	<documents count=”N”> 
 		<document id=”MD5” url=”URL”>
 			<content>CONTENT</content> 
 		</document>
