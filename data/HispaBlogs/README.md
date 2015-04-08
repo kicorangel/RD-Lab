@@ -4,7 +4,7 @@ HispaBlogs is a new collection of Spanish blogs from five different countries: A
 
 ## Collection
 
-The Autoritas team has censored blogs from different Spanish spoken countries. Posts from the census were retrieved in January 2014. The process was the following:
+The Autoritas team has censused blogs from different Spanish speaking countries. Posts from the census were retrieved from January 2014. The process was the following:
 
 - The RSS content was retrieved
 - The permalink was scrapped, the contents were cleaned and the html removed
@@ -20,7 +20,9 @@ The dataset is distributed with the following format:
 - A folder per country, coded with ISO 3166-2
 - A file per blog. The name of the file is a MD5 code plus the country. The MD5 code was calculated with the url + the country code 
 
-E.g. /en/0b376c2d7e70824e2bee6fdc474663ab_es.xml
+E.g. 
+
+/en/0b376c2d7e70824e2bee6fdc474663ab_es.xml
 
 
 ### File Format
