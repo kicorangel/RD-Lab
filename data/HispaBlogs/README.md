@@ -1,9 +1,8 @@
-HispaBlogs
--------------
+# HispaBlogs
 
 HispaBlogs is a new collection of Spanish blogs from five different countries: Argentina, Chile, Mexico, Peru and Spain. There are 450 training and 200 testing blogs respectively for each lan- guage variety, with a total of 2,250 and 1,000 blogs. Each user blog is represented by a set of user posts, with a minimum of 10 posts per user/blog.
 
-# Collection
+## Collection
 
 The Autoritas team has censored blogs from different Spanish spoken countries. Posts from the census were retrieved in January 2014. The process was the following:
 
@@ -14,7 +13,7 @@ The Autoritas team has censored blogs from different Spanish spoken countries. P
 - The number of posts per blog were limited between 1 and 10
 - Blogs with less than 100 words were removed
 
-# Distribution
+## Distribution
 
 The dataset is distributed with the following format:
 
@@ -24,7 +23,7 @@ The dataset is distributed with the following format:
 E.g. /en/0b376c2d7e70824e2bee6fdc474663ab_es.xml
 
 
-## File Format
+### File Format
 
 <author id=”MD5” url=”URL” feed=”FEED” country=”ISO 3166-2”>
 	<documents count=”N”> 
@@ -35,7 +34,7 @@ E.g. /en/0b376c2d7e70824e2bee6fdc474663ab_es.xml
 	</documents>
 </author>
 
-## Legend
+### Legend
 
 - MD5 (author): Hash calculated with the blog url plus the country code
 - FEED: RSS/atom of the blog
