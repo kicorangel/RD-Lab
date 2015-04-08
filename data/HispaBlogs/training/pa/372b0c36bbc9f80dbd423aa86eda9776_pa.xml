@@ -1,0 +1,16 @@
+<author id="372b0c36bbc9f80dbd423aa86eda9776" url="tecnopata507.wordpress.com" feed="http://tecnopata507.wordpress.com/feed/" country="PA">
+	<documents count="6">
+		<document id="a75befe127ef4b259f7988b99b4d12da" url="http://tecnopata507.wordpress.com/2008/07/08/fiecbook/">			<content><![CDATA[Acaso sera el nuevo lanzamiento del 2do semestre 2008? FB, al estilo FIEC? podria ser…Coming Soon!]]></content>
+		</document>
+		<document id="4dadd9fe9c1c0246792742397fd027dd" url="http://tecnopata507.wordpress.com/2008/09/11/primera-falla-de-google-chrome/">			<content><![CDATA[La primera falla (para mi) es…que desordena un webapp de mi trabajo. Al parecer, Chrome aun no se lleva bien con la interfaces que Journyx tiene.  Por cierto, Firefox no tiene ningun problema. Por lo demas…realmente el browser ESTA PRITTYSON(es decir: es bueno); lo cual es algo que me preocupa porque soy un fiel seguidor … Lee más]]></content>
+		</document>
+		<document id="b1e132ec2a7e46742ef118b885e71358" url="http://tecnopata507.wordpress.com/2011/08/16/joomla-tips-splash-screen-fuera-del-menu-principal/">			<content><![CDATA[Esta me la aprendi hoy(vive la StackOverflow!) Hay veces que quieres que tu sitio tenga una pantalla inicial con alguna especie de ‘intro’ y que luego de un click se entre al contenido del sitio. Algo que me estaba fallando es que dentro del menu principal del sitio, se podia volver a cargar la pantalla … Lee más]]></content>
+		</document>
+		<document id="a8b5ae0ec7e61a3b6df4c92176d30c51" url="http://tecnopata507.wordpress.com/2011/08/22/alinear-en-css/">			<content><![CDATA[Resulta ser… Que a la hora de alinear elementos en CSS, el CSS ve toda la pagina como un plano cartesiano. De manera que los valores de alineacion pueden ser negativos; por ejemplo: left-margin: -111px right-margin: 110px; Quiero que sepan que NO TENIA IDEA, asi que modificando poco a poco en Google Chrome(developer tools –great!) … Lee más]]></content>
+		</document>
+		<document id="7d3dd25a08aa484c6e871eb6c5cfb2ad" url="http://tecnopata507.wordpress.com/2011/08/22/mysql-foreign-key-error150-algunas-precauciones/">			<content><![CDATA[Es una gran pesadilla intentar hacer llaves foraneas(foreign keys) entre algunas tablas en MySQL y que siempre te salga el bendito: ‘err(150)’, que en realidad no significa nada; es un mensaje de “error general”.  Pelicula de Terror. Me acaba de suceder, y tanto buscando en internet como pensando un poco(nunca pasa de moda), al final … Lee más]]></content>
+		</document>
+		<document id="e07996ed3e16bf74f5e0cab021de22da" url="http://tecnopata507.wordpress.com/2013/04/01/php-magia-con-los-arreglos/">			<content><![CDATA[Por algunas horas estuve muy arrepentido de no haber estado en las clases de programacion en C en la universidad(venia de otra U, asi que la convalide y “decidi” no entrar de oyente y perder el tiempo por ahi…estudiando calculo integral xq estaba en panga). Hoy realmente lo necesite: tenia una situacion en PHP y … Lee más]]></content>
+		</document>
+	</documents>
+</author>

@@ -1,0 +1,12 @@
+<author id="392a95991bd5f31881b7e7d1368ac3ee" url="oara72.wordpress.com" feed="http://oara72.wordpress.com/feed/" country="PA">
+	<documents count="4">
+		<document id="a53f6e460e94febe8a6120b036851920" url="http://oara72.wordpress.com/2012/07/16/facesense-o-la-estrategia-de-facebook-para-ganar-10-000-millones-de-dolares-con-la-publicidad-online/">			<content><![CDATA[“FaceSense” o la estrategia de Facebook para ganar 10.000 millones de dólares con la publicidad online http://feedproxy.google.com/~r/es/gizmodo/~3/s4qpMvvbEEU/story01.htmArchivado en: Migracion Tagged: Facebook]]></content>
+		</document>
+		<document id="737310ae63ea2d3f6b6802b07ceb5d08" url="http://oara72.wordpress.com/2012/08/05/como-instalar-google-chrome-en-ubuntu/">			<content><![CDATA[Para instalar google chrome en ubuntu. Abrimos una consola y escribimos: sudo gedit /etc/apt/sources.list Al final escribimos del archivo que se nos abre copiamos lo siguiente: deb http://dl.google.com/linux/deb/ stable main Guardamos lo modificado. Ir a esta pagina http://dl.google.com/linux/linux_signing_key.pub Guardarlo como google-chrome.gpg Ir a Sistema->administración->orígenes del software->autenticación hacer click en importar clave (en mi caso) carpeta […]]]></content>
+		</document>
+		<document id="9c5cd68262fbfb5abaded0fbcaa7303f" url="http://oara72.wordpress.com/2012/09/18/los-diez-errores-mas-frecuentes-en-el-uso-del-socialmedia-por-las-empresas/">			<content><![CDATA[Los diez errores más frecuentes en el uso del socialmedia por las empresas http://www.tecnologiapyme.com/ebusiness/los-diez-errores-mas-frecuentes-en-el-uso-del-socialmedia-por-las-empresasArchivado en: Tecnologia Tagged: TIC]]></content>
+		</document>
+		<document id="5c294188dc29f7d375da4325ffb8cdd2" url="http://oara72.wordpress.com/2012/12/21/instalacion-de-drupal-en-localhost/">			<content><![CDATA[Ha sido una odisea total, pero para los efectos he logrado instalar Drupal en mi computadora, por primera vez. Para la bitacora del capitán, les dejo aquí el procedimiento para la instalación de esta CMS en una terminal con Linux Ubuntu 10.04. Primero: Es necesario instalar lo siguiente por medio de consola (ojo en calidad […]]]></content>
+		</document>
+	</documents>
+</author>
