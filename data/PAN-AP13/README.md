@@ -1,5 +1,5 @@
 
-# PAN-AP2013
+# PAN-AP13
 
 Training: http://www.uni-weimar.de/medien/webis/corpora/corpus-pan-labs-09-today/pan-13/pan13-data/pan13-author-profiling-training-corpus-2013-01-09.zip
 
