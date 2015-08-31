@@ -11,3 +11,5 @@ With regard to personality traits, for each trait we will provide scores (betwee
 **Early birds**: TBA
 
 **Test**: TBA
+
+More information at: http://www.uni-weimar.de/medien/webis/events/pan-15/pan15-web/author-profiling.html
