@@ -1,16 +1,40 @@
 CONFERENCE AND JOURNAL PAPERS
 -----------------------------
 
+2016
+----
+* On the Impact of Emotions on Author Profiling. Rangel, F. and Rosso, P. In: Information Processing \& Management 52(1):73--92, 2016
+
+* A Low Dimensionality Representation to Language Variety Identification. Rangel, F., Franco-Salvador, M. and Rosso, P. In Proceedings of the 17th International Conference on Intelligent Text Processing and Computational Linguistics (CICLing'16), Springer-Verlag, LNCS(), pp. , 2016
+
+* Tweeting in the Debate about Catalan Elections. Bosco C., Lai M., Patti V., Rangel F., Rosso P.  In: Proc. LREC workshop on Emotion and Sentiment Analysis Workshop (ESA), LREC-2016, Portorož, Slovenia, May 23-28 (accepted)
+
+2015
+----
+
+* On the Multilingual and Genre Robustness of EmoGraphs for Author Profiling in Social Media. Rangel, F. and Rosso, P. In: 6th International Conference of CLEF on Experimental IR meets Multilinguality, Multimodality, and Interaction (CLEF'15), Springer-Verlag, LNCS(9283), pp. 274--280, 2015
+
+* Language Variety Identification using Distributed Representations of Words and Documents. Franco-Salvador, M., Rangel, F., Rosso, P., Taulé, M. and Martí, A. In: 6th International Conference of CLEF on Experimental IR meets Multilinguality, Multimodality, and Interaction (CLEF'15), Springer-Verlag, LNCS(9283), pp. 28--40, 2015
+
+* Overview of the PAN/CLEF 2015 Evaluation Lab. Stamatatos, E., Potthast, M., Rangel, F., Rosso, P. and Stein, B. In: 6th International Conference of CLEF on Experimental IR Meets Multilinguality, Multimodality, and Interaction (CLEF'15), Springer-Verlag, LNCS(9283), pp. 518--538, 2015
+
+* Overview of the 3rd Author Profiling Task at PAN 2015. Rangel, F., Rosso, P., Potthast, M., Stein, B. and Daelemans, W. In: Cappellato L., Ferro N., Jones G., San Juan E. (Eds.) CLEF 2015 Labs and Workshops, Notebook Papers. CEUR Workshop Proceedings. CEUR-WS.org, vol. 1391 pp. , 2015
+
+* NLEL_UPV_Autoritas participation at Discrimination between Similar Languages (DSL) 2015 Shared Task. Fabra, R., Rangel, F. and Rosso, P. In: Joint Workshop on Language Technology for Closely Related Languages, Varieties and Dialects (LT4CloseLang2 – VarDial 2). Recent Advances in Natural Language Processing (RANLP), 2015
+
+* Distributed Representations of Words and Documents for Discriminating Similar Languages. Franco-Salvador, M., Rosso, P. and Rangel, F.  In: Joint Workshop on Language Technology for Closely Related Languages, Varieties and Dialects (LT4CloseLang2 – VarDial 2). Recent Advances in Natural Language Processing (RANLP), 2015
+
+
 2014
 ----
+
+* Emotional Trends in Social Media - A State Space Approach. Volgmann S., Rangel F., Niggemann O., Rosso P. In: Proc. 21st Conf. on Artificial Intelligence, ECAI-2014, Prague, Czech Republic, August, 18-22, pp. 1123-1124
 
 * Overview of the 2nd Author Profiling Task at PAN 2014. Rangel F., Rosso P., Chugur I., Potthast M., Trenkmann M., Stein B., Verhoeven B., Daelemans W. In: Cappellato L., Ferro N., Halvey M., Kraaij W. (Eds.) CLEF 2014 Labs and Workshops, Notebook Papers. CEUR-WS.org, vol. 1180, pp. 898-827
 
 * Improving the Reproducibility of PAN’s Shared Tasks: Plagiarism Detection, Author Identification, and Author Profiling. Potthast M., Gollub T., Rangel F., Rosso P., Stamatatos E., Stein B. In: 5th Int. Conf. of CLEF on Information Access Evaluation meets Multilinguality, Multimodality, and Interaction, CLEF 2014, Springer-Verlag, LNCS(8685), pp. 268-299
 
 * Emotions and Irony per Gender in Facebook. Rangel F., Hernández I., Rosso P., Reyes A. In: Proc. Workshop on Emotion, Social Signals, Sentiment & Linked Open Data (ES³LOD), LREC-2014, Reykjavík, Iceland, May 26-31, pp. 66-73
-
-* Emotional Trends in Social Media - A State Space Approach. Volgmann S., Rangel F., Niggemann O., Rosso P. In: Proc. 21st Conf. on Artificial Intelligence, ECAI-2014, Prague, Czech Republic, August, 18-22, pp. 1123-1124
 
 * Uncovering Plagiarism - Author Profiling at PAN. Rosso P., Rangel F. In: Research and Innovation, ERCIM News, n. 96
 
