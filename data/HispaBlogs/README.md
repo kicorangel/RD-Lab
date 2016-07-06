@@ -52,6 +52,7 @@ E.g.
 
 To cite Hispablogs in your academic work, please use the following references:
 
+```
 @inproceedings{rangel:lvi:2016,
 	title={A low dimensionality representation for language variety identification},
 	author={Rangel, Francisco and Rosso, Paolo and Franco-Salvador, Marc},
@@ -60,7 +61,9 @@ To cite Hispablogs in your academic work, please use the following references:
 	publisher={Springer-Verlag, LNCS()},
 	year={2016}
 }
+```
 
+```
 @incollection{franco2015language,
   title={Language variety identification using distributed representations of words and documents},
   author={Franco-Salvador, Marc and Rangel, Francisco and Rosso, Paolo and Taul{\'e}, Mariona and Mart{\'\i}, M Ant{\`o}nia},
@@ -69,4 +72,4 @@ To cite Hispablogs in your academic work, please use the following references:
   year={2015},
   publisher={Springer}
 }
-
+```
