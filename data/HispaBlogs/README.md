@@ -47,3 +47,26 @@ E.g.
 - MD5 (document): Hash calculated with the post url
 - URL: Post permalink
 - CONTENT: Retrieved content
+
+### References
+
+To cite Hispablogs in your academic work, please use the following references:
+
+@inproceedings{rangel:lvi:2016,
+	title={A low dimensionality representation for language variety identification},
+	author={Rangel, Francisco and Rosso, Paolo and Franco-Salvador, Marc},
+	booktitle={17th International Conference on Intelligent Text Processing and Computational Linguistics,  CICLing},
+	pages={},
+	publisher={Springer-Verlag, LNCS()},
+	year={2016}
+}
+
+@incollection{franco2015language,
+  title={Language variety identification using distributed representations of words and documents},
+  author={Franco-Salvador, Marc and Rangel, Francisco and Rosso, Paolo and Taul{\'e}, Mariona and Mart{\'\i}, M Ant{\`o}nia},
+  booktitle={Experimental IR meets multilinguality, multimodality, and interaction},
+  pages={28--40},
+  year={2015},
+  publisher={Springer}
+}
+
