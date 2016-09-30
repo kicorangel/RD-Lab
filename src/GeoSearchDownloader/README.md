@@ -1,7 +1,7 @@
 GeoSearchDownloader
 --------------------
 
-GeoSearchDownloader allows to retrieve geotagged tweets.
+GeoSearchDownloader allows to retrieve geolocated tweets.
 
 **Configuration**
 
