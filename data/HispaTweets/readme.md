@@ -8,4 +8,4 @@ The methodology followed to collect the dataset is described in the TFM written 
 
 The dataset is available in the following url:
 
-**Uploading...**
+https://s3.amazonaws.com/cosmos.datasets/hispatweets-populated.zip
