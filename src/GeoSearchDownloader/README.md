@@ -3,7 +3,7 @@ GeoSearchDownloader
 
 GeoSearchDownloader allows to retrieve geotagged tweets.
 
-**Configuration
+**Configuration**
 
 Step 1: Edit TwitterDownloader.java to configure your Twitter API keys:
 
