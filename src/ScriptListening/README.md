@@ -8,7 +8,7 @@ Script Listening allows to easily retrieve information from Twitter. It allows t
 * Retrieve from search query (Twitter-Search): It retrieves the defined number of tweets from a series of keywords.
 * Retrieve from search query and geography (Twitter-Search): It retrieves the defined number of tweets from a series of keywords restricted by geographical places.
 
-#Project Structure
+#Project Structure#
 
 The project contains the following folders:
 
