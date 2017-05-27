@@ -1,5 +1,5 @@
-Script Listening
-----------------
+Project Definition
+------------------
 
 Script Listening allows to easily retrieve information from Twitter. It allows three ways of retrieving information, that may be combined in several ways:
 
@@ -8,7 +8,8 @@ Script Listening allows to easily retrieve information from Twitter. It allows t
 * Retrieve from search query (Twitter-Search): It retrieves the defined number of tweets from a series of keywords.
 * Retrieve from search query and geography (Twitter-Search): It retrieves the defined number of tweets from a series of keywords restricted by geographical places.
 
-#Project Structure#
+Project Structure
+-----------------
 
 The project contains the following folders:
 
@@ -17,7 +18,8 @@ The project contains the following folders:
 * proyectos: It contains xml files defining different retrieval projects. Three documented examples are provided.
 
 
-#Working instructions
+Working Instructions
+--------------------
 
 * Copy compiled files (.jar) in the scripts folder.
 * Define the corresponding retrieval project in proyectos folder.
