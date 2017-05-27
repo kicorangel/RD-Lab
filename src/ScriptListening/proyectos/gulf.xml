@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<PROYECTO>
+	<NOMBRE>Gulf</NOMBRE>
+	<TWITTER>
+		<KEY></KEY>
+		<SECRET></SECRET>
+		<ACCESSTOKEN></ACCESSTOKEN>
+		<ACCESSSECRET></ACCESSSECRET>
+	</TWITTER>
+	<TWITTER-BUSQUEDA>
+		<RUTA>/mnt/data/PAN/pan17/twgeo/gulf</RUTA>
+		<TIMEZONE></TIMEZONE>
+		<BUSQUEDAS>
+			<BUSQUEDA clave="" longitud="47.97740520000002" latitud="29.375859" radio="50" resultados="10000" comment="Kuwait - Kuwait" />
+			<BUSQUEDA clave="" longitud="46.67529569999999" latitud="24.7135517" radio="50" resultados="10000" comment="Saudi Arabia - Riyadh" />
+			<BUSQUEDA clave="" longitud="54.37734380000006" latitud="24.453884" radio="50" resultados="10000" comment="UAE - Abu Dhabi" />
+			<BUSQUEDA clave="" longitud="51.53103979999992" latitud="25.2854473" radio="50" resultados="10000" comment="Qatar - Doha" />
+			<BUSQUEDA clave="" longitud="50.58604969999999" latitud="26.2285161" radio="50" resultados="10000" comment="Bahrain - Manama" />
+			<BUSQUEDA clave="" longitud="58.40592270000002" latitud="23.58589" radio="50" resultados="10000" comment="Oman - Mascate" />
+			<BUSQUEDA clave="" longitud="44.19100660000004" latitud="15.3694451" radio="50" resultados="10000" comment="Yemen - Sana'a" />
+		</BUSQUEDAS>
+	</TWITTER-BUSQUEDA>
+</PROYECTO>
