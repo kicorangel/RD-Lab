@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<PROYECTO>
+	<NOMBRE>Valencia</NOMBRE>
+	<TWITTER>
+		<KEY>92tsz0ZF8gVx5bz619uuYjxYF</KEY>
+		<SECRET>O8OWSW720a7uXqAObFxoL3dbGT6a2RY9iXJTIuKbq77JT0w8Ob</SECRET>
+    	<ACCESSTOKEN>159991732-xBBCnYeDvbnbTRa7qlF5Eqqvw4YH3StT10naxb59</ACCESSTOKEN>
+		<ACCESSSECRET>xjCLsHFEW7amDbLy1cci0P0Qb33Z41BVmgnZFrNOfPQIF</ACCESSSECRET>
+	</TWITTER>
+	<TWITTER-BUSQUEDA>
+		<RUTA>/mnt/twgeo/valencia</RUTA>
+		<TIMEZONE></TIMEZONE>
+		<BUSQUEDAS>
+			<BUSQUEDA clave="" longitud="-0.37749999999999995" latitud="39.48638888888889" radio="100" resultados="1000" comment="Valencia" />
+			<BUSQUEDA clave="" longitud="-0.483056" latitud="38.345278" radio="55" resultados="1000" commnent="Alicante" />
+			<BUSQUEDA clave="" longitud="-0.166667" latitud="40.166667" radio="75" resultados="1000" comment="Castellon" />
+			<BUSQUEDA clave="" longitud="0.391080" latitud="40.376621" radio="20" resultados="1000" comment="Peniscola" />
+			<BUSQUEDA clave="" lontidud="0.048841" latitud="40.542756" radio="30" resultados="1000" comment="Sur Morella" />
+		</BUSQUEDAS>
+	</TWITTER-BUSQUEDA>
+	<TWITTER-TIMELINE>
+		<RUTA>/mnt/socialancer-ea/chile/timelines</RUTA>
+		<TIMELINES>	
+			<TIMELINE usuario="kicorangel" resultados="100" />
+			<TIMELINE usuario="xllinares" resultados="100" />
+			<TIMELINE usuario="carlosguadian" resultados="5000" />
+			<TIMELINE usuario="autoritas" resultados="1000" />
+			<TIMELINE usuario="raulalegre" resultados="1000" />
+			<TIMELINE usuario="socialancer" resultados="1000" />
+		</TIMELINES>
+	</TWITTER-TIMELINE>
+	<FACEBOOK-PERFIL>
+		<RUTA></RUTA>
+		<PERFILES>
+			<PERFIL usuario="franciscomanuel.rangelpardo" resultados="100" comentarios="SI" />
+		</PERFILES>
+	</FACEBOOK-PERFIL>
+	<GRAFO-HASHTAGS>
+		<GRAFOS>
+			<GRAFO opcion="TWITTER-BUSQUEDA" ruta="/xxx" />
+			<GRAFO opcion="TIWTTER-TIMELINE" ruta="/xxx" />
+		</GRAFOS>
+	</GRAFO-HASHTAGS>
+	<GRAFO-CONVERSACION>
+	</GRAFO-CONVERSACION>
+	<GRAFO-FOLLOWERS>
+		<USUARIOS>
+			<USUARIO usuario="kicorangel" ruta="/xxx" procesar="no" />
+			<USUARIO usuario="kicorangel" ruta="/xxx" procesar="si" />
+		</USUARIOS>
+	</GRAFO-FOLLOWERS>
+	<JSON2CSV>
+		<JSON>/mnt/socialancer-ea/javier1</JSON>
+		<CSV>/mnt/socialancer-ea/javier1/takbar.csv</CSV>
+		<CAMPOS>
+			<CAMPO nombre="created_at" procesar="si" />
+			<CAMPO nombre="user:screen_name" procesar="si" />
+			<CAMPO nombre="text" procesar="si" />
+			<CAMPO nombre="retweet_count" procesar="si" />
+		</CAMPOS>
+	</JSON2CSV>
+	<TWITTER2GEXF>
+		<JSON>/mnt/twgeo/valencia</JSON>
+		<GEXF>/mnt/twgeo/valencia-gephi.csv</GEXF>
+		<MENTION>/mnt/twgeo/valencia-gephi-mention.csv</MENTION>
+		<RT>/mnt/twgeo/valencia-gephi-rt.csv</RT>
+		<BOTH>/mnt/twgeo/valencia-gephi-both.csv</BOTH>
+	</TWITTER2GEXF>
+	<TWITTER2GEO>
+		<JSON>/mnt/twgeo/valencia</JSON>
+		<MAPA>/mnt/twgeo/valencia-map.html</MAPA>
+		<MULTIPLICADOR>100</MULTIPLICADOR>
+		<PLANTILLA>../plantillas/heatmap.html</PLANTILLA>
+	</TWITTER2GEO>
+	<TWITTER2COSMOS>
+		<JSON>/mnt/twgeo/valencia</JSON>
+		<PROYECTO>valencia_2685</PROYECTO>
+		<SUBPROYECTO>1</SUBPROYECTO>
+		<BUSQUEDA>1</BUSQUEDA>
+		<CLAVE>1</CLAVE>
+	</TWITTER2COSMOS>
+</PROYECTO>
