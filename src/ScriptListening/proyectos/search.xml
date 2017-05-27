@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<PROYECTO>
+	<NOMBRE>Retrieving from queries: Takbar Haddi and Mohamed Lamin Haidala</NOMBRE>
+	<TWITTER>
+		<KEY></KEY>
+		<SECRET></SECRET>
+    	<ACCESSTOKEN></ACCESSTOKEN>
+		<ACCESSSECRET></ACCESSSECRET>
+	</TWITTER>
+	<TWITTER-BUSQUEDA>
+		<RUTA>/mnt/data/twsearch</RUTA>
+		<TIMEZONE></TIMEZONE>
+		<BUSQUEDAS>
+			<BUSQUEDA clave="Takbar Haddi" longitud="" latitud="" radio="" resultados="5000" />		
+			<BUSQUEDA clave="Mohamed Lamin Haidala" longitud="" latitud="" radio="" resultados="5000" />	
+		</BUSQUEDAS>
+	</TWITTER-BUSQUEDA>
+</PROYECTO>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<PROYECTO>
+	<NOMBRE>Retrieving timelines: Kicorangel and AuthorProfiling</NOMBRE>
+	<TWITTER>
+		<KEY></KEY>
+		<SECRET></SECRET>
+		<ACCESSTOKEN></ACCESSTOKEN>
+		<ACCESSSECRET></ACCESSSECRET>
+	</TWITTER>
+	<TWITTER-TIMELINE>
+		<RUTA>/mnt/data/twtimelines</RUTA>
+		<TIMELINES>	
+			<TIMELINE usuario="kicorangel" resultados="2000" />
+			<TIMELINE usuario="authorprofiling" resultados="1000" />
+		</TIMELINES>
+	</TWITTER-TIMELINE>
+</PROYECTO>
