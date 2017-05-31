@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<PROYECTO>
+	<NOMBRE>JSON2CSV conversion example</NOMBRE>
+	<TWITTER>
+		<KEY></KEY>
+		<SECRET></SECRET>
+    	<ACCESSTOKEN></ACCESSTOKEN>
+		<ACCESSSECRET></ACCESSSECRET>
+	</TWITTER>
+	<JSON2CSV>
+		<JSON>/mnt/data/twtimelines</JSON>
+		<CSV>/mnt/data/twtimelines/timelines.csv</CSV>
+		<FIELDS>
+			<FIELD name="id" process="y" />
+			<FIELD name="created_at" process="y" />
+			<FIELD name="user:screen_name" process="y" />
+			<FIELD name="user:followers_count" process="y" />
+			<FIELD name="user:friends_count" process="y" />
+			<FIELD name="user:listed_count" process="y" />
+			<FIELD name="user:favourites_count" process="y" />
+			<FIELD name="text" process="y" />
+		</FIELDS>
+	</JSON2CSV>
+</PROYECTO>
