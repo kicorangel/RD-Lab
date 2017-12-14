@@ -1,0 +1,3 @@
+Taulé M., Martí M.A., Rangel F., Rosso P., Bosco C., Patti V. Overview of the Task on Stance and Gender Detection in Tweets on Catalan Independence. In: Martínez R., Gonzalo J., Rosso P., Montalvo S., Carrillo-de-Albornoz J. (Eds.) IberEval 2017. CEUR Workshop Proceedings. CEUR-WS.org, vol. 1881, pp. 157-177.
+
+Giménez M., Baviera T., Llorca G., Gámir J., Calvo D., Rosso P., Rangel F. Overview of the 1st Classification of Spanish Election Tweets Task at IberEval 2017 . In: Martínez R., Gonzalo J., Rosso P., Montalvo S., Carrillo-de-Albornoz J. (Eds.) IberEval 2017. CEUR Workshop Proceedings. CEUR-WS.org, vol. 1881, pp. 1-14.
