@@ -1,0 +1,1 @@
+Rangel F., Rosso P. On the Impact of Emotions on Author Profiling. In: Information Processing & Management, vol. 52, issue 1, pp. 73-92 DOI: 10.1016/j.ipm.2015.06.003 http://www.sciencedirect.com/science/article/pii/S0306457315000783
