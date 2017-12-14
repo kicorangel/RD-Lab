@@ -1,0 +1,1 @@
+Bosco C., Lai M., Patti V., Rangel F., Rosso P. Tweeting in the Debate about Catalan Elections. In: Proc. LREC workshop on Emotion and Sentiment Analysis Workshop (ESA), LREC-2016, Portorož, Slovenia, May 23-28, pp. 67-70
