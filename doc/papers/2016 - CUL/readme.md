@@ -1,0 +1,1 @@
+Rosso P., Hernández I., Rangel F. Universality and Creativity: The usage of Language in Gender and Irony. In: Creativity and Universality in Language, Lecture Notes in Morphogenesis, E.Altman, M.Degli Esposti, F.Pachet (Eds.), Springer-Verlag, pp. 177-186 http://link.springer.com/chapter/10.1007%2F978-3-319-24403-7_11
