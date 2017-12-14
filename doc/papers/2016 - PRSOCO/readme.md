@@ -1,0 +1,1 @@
+Rangel F., González F., Restrepo-Calle F., Montes M., Rosso P. PAN at FIRE: Overview of the PR-SOCO Track on Personality Recognition in SOurce COde. In: Notebook Papers of FIRE 2016, FIRE-2016, Kolkata, India, December 7-10, CEUR Workshop Proceedings. CEUR-WS.org, vol. 1737, pp. 1-5
