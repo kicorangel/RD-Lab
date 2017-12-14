@@ -1,0 +1,3 @@
+Rangel F., Rosso P., Verhoeven B., Daelemans W., Potthast M., Stein B. Overview of the 4th Author Profiling Task at PAN 2016: Cross-Genre Evaluations. In: Balog K., Cappellato L., Ferro N., Macdonald C. (Eds.) CLEF 2016 Labs and Workshops, Notebook Papers. CEUR Workshop Proceedings. CEUR-WS.org, vol. 1609, pp. 750-784
+
+Rosso P., Rangel F., Potthast M., Stamatatos E., Tschuggnall M., Stein B. Overview of the PAN'2016 - New Challenges for Authorship Analysis: Cross-genre Profiling, Clustering, Diarization, and Obfuscation. In: 7th Int. Conf. of CLEF on Experimental IR Meets Multilinguality, Multimodality, and Interaction, CLEF 2016, Springer-Verlag, LNCS(9822), pp. 332-350
