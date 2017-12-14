@@ -1,0 +1,3 @@
+Rangel F., Rosso P., Potthast M., Stein B. Overview of the 5th Author Profiling Task at PAN 2017: Gender and Language Variety Identification in Twitter. In: Cappellato L., Ferro N., Goeuriot L, Mandl T. (Eds.) CLEF 2017 Labs and Workshops, Notebook Papers. CEUR Workshop Proceedings. CEUR-WS.org, vol. 1866.
+
+Potthast M., Rangel F., Tschuggnall M., Stamatatos E., Rosso P., Stein B. Overview of PAN'17: Author Identification, Author Profiling, and Author Obfuscation. In: 8th Int. Conf. of CLEF on Experimental IR Meets Multilinguality, Multimodality, and Visualization, CLEF 2017, Springer-Verlag, LNCS(10456), pp. 275–290
