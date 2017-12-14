@@ -1,0 +1,1 @@
+Giachanou A., Rangel F., Crestani F., Rosso P. Emerging Sentiment Language Model for Emotion Detection. In: Proc. 4th Italian Conference on Computational Linguistics (CLiC-it 2017), Rome, Italy, December 11-13, pp. (accepted)
