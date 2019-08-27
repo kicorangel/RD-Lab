@@ -1,0 +1,26 @@
+Instalar node:
+	https://nodejs.org/es/download/
+
+Instalar Tableau (versión 2018.1), yo uso la versión para estudiantes, que me daba una licencia gratuita
+	Al ser una plataforma de pago, si quieres te puedo enseñar más o menos lo que sale desde mi entorno local
+	https://www.tableau.com/es-es/pricing/individual
+
+Antes de todo se entra a la carpeta de 'config' y en el 'sysconfig.json' y cambiamos los siguientes parametros dependiendo del mes y año del que queramos sacar los datos en:
+
+"params": {
+    "actual_month": "02",
+    "actual_year": "2018"
+  },
+
+
+
+Seguidamente, para ejecutar, desde una terminal con node instalado ejecutar:
+	npm install
+
+	# Compiles all typescript to javascript
+	npm run build
+
+	# Runs the service
+	npm start
+
+Una vez ejecutado todo esto se entra en la carpeta out y obtenemos el resultado en result.twb, este archivo se abre con tableau y carga el informe final, aportando primero la contraseña de acceso a la BD (en este caso no están los datos correctos de conexión, están los de mi entorno local)
