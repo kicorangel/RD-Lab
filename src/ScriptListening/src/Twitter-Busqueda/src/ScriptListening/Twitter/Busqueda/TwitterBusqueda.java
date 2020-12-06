@@ -1,8 +1,8 @@
-package twitter.busqueda;
+package ScriptListening.Twitter.Busqueda;
 
-import Twitter.TwitterKeys;
-import Twitter.TwitterMngr;
-import Twitter.TwitterQuery;
+import ScriptListening.Twitter.TwitterKeys;
+import ScriptListening.Twitter.TwitterMngr;
+import ScriptListening.Twitter.TwitterQuery;
 import java.io.File;
 import java.io.FileWriter;
 import java.nio.file.Files;
@@ -23,6 +23,10 @@ import twitter4j.TwitterFactory;
 import twitter4j.conf.ConfigurationBuilder;
 import twitter4j.json.DataObjectFactory;
 
+/**
+ *
+ * @author @kicorangel
+ */
 public class TwitterBusqueda {
     public static void main(String[] args) throws InterruptedException {
         if (args.length<1) {
@@ -49,6 +53,7 @@ public class TwitterBusqueda {
               .setOAuthAccessToken(oKeys.ACCESSTOKEN)
               .setOAuthAccessTokenSecret(oKeys.ACCESSSECRET);
             cb.setJSONStoreEnabled(true);
+            cb.setTweetModeExtended(true);
         }
         catch (Exception te)
         {
