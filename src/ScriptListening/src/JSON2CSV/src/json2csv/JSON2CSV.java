@@ -13,7 +13,7 @@ import org.json.JSONObject;
 
 /**
  *
- * @author @kicorangel
+ * @author Francisco Rangel (@kicorangel)
  */
 
 public class JSON2CSV {
