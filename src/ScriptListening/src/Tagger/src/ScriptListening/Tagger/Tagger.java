@@ -34,8 +34,8 @@ import org.apache.lucene.util.Version;
  *
  * @author @kicorangel
  */
-public class Tagger {
 
+public class Tagger {
     private static GenderPredictor mGenderPredictor;
     private static AgePredictor mAgePredictor;
     private static LVIPredictor mLVIPredictor;
