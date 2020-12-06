@@ -11,6 +11,11 @@ import java.util.ArrayList;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+/**
+ *
+ * @author @kicorangel
+ */
+
 public class JSON2CSV {
 
     public static void main(String[] args) throws IOException {
