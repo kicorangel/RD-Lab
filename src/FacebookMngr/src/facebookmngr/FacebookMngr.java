@@ -15,7 +15,7 @@ import org.json.JSONObject;
 
 /**
  *
- * @author kico
+ * @author @kicorangel
  */
 public class FacebookMngr {
 
