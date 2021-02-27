@@ -27,6 +27,7 @@ import twitter4j.json.DataObjectFactory;
  *
  * @author @kicorangel
  */
+
 public class TwitterBusqueda {
     public static void main(String[] args) throws InterruptedException {
         if (args.length<1) {
