@@ -42,6 +42,11 @@ import org.xml.sax.SAXException;
 public class Test {
 
     public static void main(String[] args) throws IOException, FileNotFoundException, ParserConfigurationException, SAXException {
+//        T_NADI2021.Test();
+        
+//        T_PAN_AP_20.Test();
+//        T_PAN_AP_21.Test();
+        T_PAN_AP_19.Test();
         
         /* IroSvA19 */
 //        if (args.length<4) {
@@ -63,33 +68,15 @@ public class Test {
         
 //        PAN_AP_15_personality_discrete_Demo(Integer.valueOf(args[0]), Integer.valueOf(args[1]), Integer.valueOf(args[2]));
         
-        for (int minFreq : new int[]{10, 5, 3, 1}) {
-            for (int minSize : new int[]{1, 2, 3}) {
-                for (int LDRVer : new int[]{1, 2}) {
-//                    UNIFY_Ekman_Emotions_Demo(minFreq, minSize, LDRVer);
-                        TASS_Sentiment_Demo(minFreq, minSize, LDRVer);
-                }
-            }
-        }
-        
-//        if (args.length<4) {
-//            System.out.println("USE: java -jar LDR.jar lang minFreq minSize ldrVersion");
-//            return;
-//        } else {
-////            PAN_AP_20_Demo(args[0], Integer.valueOf(args[1]), Integer.valueOf(args[2]), Integer.valueOf(args[3]));
-////            UNIFY_Ekman_Emotions_Demo(args[0], Integer.valueOf(args[1]), Integer.valueOf(args[2]), Integer.valueOf(args[3]));
-//            
-//        }
-
-//        for (String lang:new String[]{"en","es"}) {
-//            for (int freq:new Integer[]{1, 2, 3, 5, 10}) {
-//                for (int size:new Integer[]{1, 2, 3}) {
-//                    for (int v:new Integer[]{1,2}) {
-//                        PAN_AP_20_Demo(lang, freq, size, v);
-//                    }
+//        for (int minFreq : new int[]{10, 5, 3, 1}) {
+//            for (int minSize : new int[]{1, 2, 3}) {
+//                for (int LDRVer : new int[]{1, 2}) {
+////                    UNIFY_Ekman_Emotions_Demo(minFreq, minSize, LDRVer);
+//                        TASS_Sentiment_Demo(minFreq, minSize, LDRVer);
 //                }
 //            }
 //        }
+   
         
         /* MADAR Subtask 1 */
 //        if (args.length<3) {
