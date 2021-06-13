@@ -21,6 +21,7 @@ import com.kicorangel.repr.nGrams.Datasets.NNN1vsall;
 import com.kicorangel.repr.nGrams.Datasets.PAN18_gender;
 import com.kicorangel.repr.nGrams.Datasets.PAN19_bots;
 import com.kicorangel.repr.nGrams.Datasets.PAN19_gender;
+import com.kicorangel.repr.nGrams.Datasets.PAN20_fakers;
 import com.kicorangel.repr.nGrams.Datasets.QatarDeception;
 import com.kicorangel.repr.nGrams.Datasets.SENT_TASS;
 import com.kicorangel.repr.nGrams.Datasets.SevenTruthSevenLies;
@@ -93,9 +94,16 @@ public class nGrams {
 //        EMO_Angelo_Full_Demo();
 
 //        EMO_Unify_Demo();
-            SENT_TASS_Demo();
+//            SENT_TASS_Demo();
+
+//        T_NADI_2021.Test();
+//        T_PAN_AP_20.Test();
+//           T_PAN_AP_21.Test();
+        T_PAN_AP_19.Test();
     }
 
+    
+        
     private static void SENT_TASS_Demo() throws IOException, FileNotFoundException, ParserConfigurationException, SAXException {
         for (int t:new Integer[] {100, 500, 1000}) {
             for (NGRAMTYPE ntype:NGRAMTYPE.values()) {
