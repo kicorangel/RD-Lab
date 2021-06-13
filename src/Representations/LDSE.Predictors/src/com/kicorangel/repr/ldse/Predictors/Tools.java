@@ -46,7 +46,7 @@ public class Tools {
         return data;
     }
     
-    public static String GetDocumentText(String authorFile) {
+    public static String GetTweetsFromFile(String authorFile) {
         String sText = "";
         try {
             File fXmlFile = new File(authorFile);
