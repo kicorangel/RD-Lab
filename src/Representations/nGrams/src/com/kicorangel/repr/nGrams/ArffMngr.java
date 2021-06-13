@@ -18,7 +18,7 @@ public class ArffMngr {
         try {
             fw.write("@relation '" + type + "-" + total + "-" + n + "-grams-by-@kicorangel'\n");
             for (int i=0;i<nGrams.size();i++) {
-                fw.write("@attribute '" + CleanToken(nGrams.get(i), i) + "' real\n");
+                fw.write("@attribute '" + CleanToken(nGrams.get(i), type, i) + "' real\n");
             }
             
             fw.write("@attribute 'class' {");
@@ -43,7 +43,7 @@ public class ArffMngr {
         }
     }
     
-    private static String CleanToken(String token, int i) {
+    private static String CleanToken(String token, String type, int i) {
         
         if (token.equalsIgnoreCase("class")) {
             token = "the_class";
@@ -54,6 +54,6 @@ public class ArffMngr {
             token = token.replace("\\", "backslash");
         }
         
-        return "char-" + token + "-" + i;
+        return type + "-" + token + "-" + i;
     }
 }
