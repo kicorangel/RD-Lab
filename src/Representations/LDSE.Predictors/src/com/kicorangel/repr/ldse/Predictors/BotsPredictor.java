@@ -8,12 +8,8 @@ package com.kicorangel.repr.ldse.Predictors;
 
 import com.kicorangel.repr.ldse.GenerateVectorSpaceModel;
 import com.kicorangel.repr.ldse.Datasets.PAN_AP_19_bots;
-import java.io.BufferedReader;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Hashtable;
 import com.kicorangel.repr.common.Prediction;
 import weka.classifiers.Classifier;
 import weka.core.Instance;

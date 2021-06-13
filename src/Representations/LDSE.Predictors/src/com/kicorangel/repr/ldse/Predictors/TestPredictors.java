@@ -6,12 +6,11 @@
 package com.kicorangel.repr.ldse.Predictors;
 
 import com.kicorangel.repr.common.Prediction;
-import com.kicorangel.repr.ldse.Datasets.PAN_AP_19_bots;
 import static com.kicorangel.repr.ldse.Predictors.Tools.GetDocumentText;
 
 /**
  *
- * @author frangel
+ * @author @kicorangel
  */
 public class TestPredictors {
 
