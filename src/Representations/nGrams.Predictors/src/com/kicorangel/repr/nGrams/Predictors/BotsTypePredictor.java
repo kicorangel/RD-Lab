@@ -10,10 +10,10 @@ import com.kicorangel.repr.enumerations.NGRAMTYPE;
 import com.kicorangel.repr.enumerations.PreprocessingOptions;
 import com.kicorangel.repr.enumerations.SET;
 import com.kicorangel.repr.nGrams.GenerateVectorSpaceModel;
-import com.kicorangel.repr.nGrams.Datasets.PAN19_bots;
 import java.io.IOException;
 import java.util.ArrayList;
 import com.kicorangel.repr.common.Prediction;
+import com.kicorangel.repr.nGrams.Datasets.BotType;
 import static com.kicorangel.repr.nGrams.Predictors.ClassifierMngr.LoadClassifier;
 import com.kicorangel.repr.nGrams.Predictors.Eval.Info;
 import java.io.BufferedReader;
@@ -28,17 +28,19 @@ import weka.core.Instance;
  *
  * @author @kicorangel
  */
-public class BotsPredictor implements iPredictor{
+public class BotsTypePredictor implements iPredictor{
     private ArrayList<String> mLabels;
     private Classifier mClassifier;
     private GenerateVectorSpaceModel mVSM;
+    private String mBotType;
         
-    public BotsPredictor(String nGramsPath, String nGramsFile, String modelPath, NGRAMTYPE nGramsType, int n, int total, int length) throws IOException, Exception {
+    public BotsTypePredictor(String botType, String nGramsPath, String nGramsFile, String modelPath, NGRAMTYPE nGramsType, int n, int total, int length) throws IOException, Exception {
+        mBotType = botType;
         InstantiatePredictor(nGramsPath, nGramsFile, modelPath, nGramsType, n, total, length);
     }
     
     public void InstantiatePredictor(String nGramsPath, String nGramsFile, String modelPath, NGRAMTYPE nGramsType, int n, int total, int length) throws IOException {
-        PAN19_bots oPredictor = new PAN19_bots(n, total, nGramsType, "", nGramsPath, "", "", "", PAN19_bots.GetLabels(), SET.BOTH, 
+        BotType oPredictor = new BotType(mBotType, n, total, nGramsType, "", nGramsPath, "", "", "", BotType.GetLabels(), SET.BOTH, 
                             new PreprocessingOptions(true, false, true, false, length, new String[0]));
         mLabels = oPredictor.GetLabels();
         mClassifier = LoadClassifier(modelPath);
@@ -72,59 +74,33 @@ public class BotsPredictor implements iPredictor{
         String sPredictionGroup = "";
         
         if (prediction==0) {
-            sPredictionGroup = "bot"; 
+            sPredictionGroup = "yes"; 
         } else if (prediction==1) {    
-            sPredictionGroup = "human";
+            sPredictionGroup = "no";
         } 
         
         return sPredictionGroup;
     }
     
-    public Hashtable<String, Info> LoadTruth(String truthPath, String lang) throws FileNotFoundException, IOException, URISyntaxException
-    {
-        Hashtable<String, Info>oTruth = new Hashtable<String, Info>();
+    public Hashtable<String, Info> LoadTruth(String truthPath, String lang) throws FileNotFoundException, IOException, URISyntaxException {
+        Hashtable<String, Info> oTruth = new Hashtable<String, Info>();
         
-        FileReader fr = null;
-        
-        if (!truthPath.endsWith("/")) {
-            truthPath+="/";
-        }
-        
-        truthPath += lang;
-        fr = new FileReader(truthPath + "/truth.txt");
-        
+        FileReader fr = new FileReader(truthPath + "/" + lang + "/" + mBotType + ".txt");
         BufferedReader bf = new BufferedReader(fr);
         String sCadena = "";
 
-        while ((sCadena = bf.readLine())!=null)
-        {
-            // userid:::gender:::variety
-
+        while ((sCadena = bf.readLine())!=null) {
             String []data = sCadena.split(":::");
-            
-            try
-            {
-                String sUser = data[0];
+            if (data.length==2) {
                 Info oInfo = new Info();
-                if (oTruth.containsKey(sUser)) {
-                    oInfo = oTruth.get(sUser);
-                }
-                Info info = new Info();
-                info.User = data[0];
-                info.Lang = lang;
-                info.Type = data[1]; // .replaceAll("M", "male").replace("F", "female");
-
-                oTruth.put(sUser, info);
-            }
-            catch (Exception ex)
-            {
-                String s = ex.toString();
+                oInfo.Lang = lang;
+                oInfo.User = data[0];
+                oInfo.Type = data[1];
+                oTruth.put(data[0], oInfo);
             }
         }
-        
-        bf.close();
-        fr.close();
-        
+    
         return oTruth;
     }
+    
 }

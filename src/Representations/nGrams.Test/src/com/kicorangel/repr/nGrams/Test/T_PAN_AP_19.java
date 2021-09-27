@@ -39,11 +39,11 @@ public class T_PAN_AP_19 {
         String sTestArff = "/mnt/data/PAN/ngrams/pan19/arff/test.bots." + lang + "." + ntype.toString() + ".n" + n + ".t" + t + ".arff";
         
         
-        new PAN19_bots(n, t, ntype, sCorpusPath, sTmpPath, sTrainingArff, sTestPath, sTestArff, PAN19_bots.GetLabels(), SET.BOTH, new PreprocessingOptions(true, false, true, false, 1, new String[0]))
-                .Run();
+//        new PAN19_bots(n, t, ntype, sCorpusPath, sTmpPath, sTrainingArff, sTestPath, sTestArff, PAN19_bots.GetLabels(), SET.BOTH, new PreprocessingOptions(true, false, true, false, 1, new String[0]))
+//                .Run();
         
         /* EN WORD */
-        lang = "en";
+//        lang = "en";
         t = 200;
         n = 1;
         ntype = NGRAMTYPE.WORD;
@@ -54,8 +54,8 @@ public class T_PAN_AP_19 {
         sTestArff = "/mnt/data/PAN/ngrams/pan19/arff/test.bots." + lang + "." + ntype.toString() + ".n" + n + ".t" + t + ".arff";
         
         
-        new PAN19_bots(n, t, ntype, sCorpusPath, sTmpPath, sTrainingArff, sTestPath, sTestArff, PAN19_bots.GetLabels(), SET.BOTH, new PreprocessingOptions(true, false, true, false, 1, new String[0]))
-                .Run();
+//        new PAN19_bots(n, t, ntype, sCorpusPath, sTmpPath, sTrainingArff, sTestPath, sTestArff, PAN19_bots.GetLabels(), SET.BOTH, new PreprocessingOptions(true, false, true, false, 1, new String[0]))
+//                .Run();
         
         /* ES CHAR */
         lang = "es";
@@ -69,8 +69,8 @@ public class T_PAN_AP_19 {
         sTestArff = "/mnt/data/PAN/ngrams/pan19/arff/test.bots." + lang + "." + ntype.toString() + ".n" + n + ".t" + t + ".arff";
         
         
-        new PAN19_bots(n, t, ntype, sCorpusPath, sTmpPath, sTrainingArff, sTestPath, sTestArff, PAN19_bots.GetLabels(), SET.BOTH, new PreprocessingOptions(true, false, true, false, 1, new String[0]))
-                .Run();
+//        new PAN19_bots(n, t, ntype, sCorpusPath, sTmpPath, sTrainingArff, sTestPath, sTestArff, PAN19_bots.GetLabels(), SET.BOTH, new PreprocessingOptions(true, false, true, false, 1, new String[0]))
+//                .Run();
         
         /* EN WORD */
         lang = "es";
@@ -84,7 +84,7 @@ public class T_PAN_AP_19 {
         sTestArff = "/mnt/data/PAN/ngrams/pan19/arff/test.bots." + lang + "." + ntype.toString() + ".n" + n + ".t" + t + ".arff";
         
         
-        new PAN19_bots(n, t, ntype, sCorpusPath, sTmpPath, sTrainingArff, sTestPath, sTestArff, PAN19_bots.GetLabels(), SET.BOTH, new PreprocessingOptions(true, false, true, false, 1, new String[0]))
+        new PAN19_bots(n, t, ntype, sCorpusPath, sTmpPath, sTrainingArff, sTestPath, sTestArff, PAN19_bots.GetLabels(), SET.TEST, new PreprocessingOptions(true, false, true, false, 1, new String[0]))
                 .Run();
         
     }

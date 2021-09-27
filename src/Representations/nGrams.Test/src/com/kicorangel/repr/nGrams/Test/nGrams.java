@@ -99,7 +99,9 @@ public class nGrams {
 //        T_NADI_2021.Test();
 //        T_PAN_AP_20.Test();
 //           T_PAN_AP_21.Test();
-        T_PAN_AP_19.Test();
+//        T_PAN_AP_19.Test();
+        BotTypes.Test();
+            
     }
 
     

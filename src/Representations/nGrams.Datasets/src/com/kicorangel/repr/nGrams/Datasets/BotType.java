@@ -48,7 +48,7 @@ import org.xml.sax.SAXException;
  *
  * @author kicorangel
  */
-public class PAN19_bots {
+public class BotType {
     private int mN;
     private int mTotal;
     private String msCorpusPath;
@@ -61,8 +61,11 @@ public class PAN19_bots {
     private PreprocessingOptions mPrepOpt;
     private NGRAMTYPE mType;
     
+    private String mBotType;
+    
        
-    public PAN19_bots(int n, int total, NGRAMTYPE type, String corpusPath, String tmpPath, String trainingArff, String testPath, String testArff, ArrayList<String> labels, SET set, PreprocessingOptions prepOpt) {
+    public BotType(String botType, int n, int total, NGRAMTYPE type, String corpusPath, String tmpPath, String trainingArff, String testPath, String testArff, ArrayList<String> labels, SET set, PreprocessingOptions prepOpt) {
+        mBotType = botType;
         mN = n;
         mTotal = total;
         msCorpusPath = corpusPath;
@@ -317,8 +320,8 @@ public class PAN19_bots {
     public static ArrayList<String> GetLabels() {
         ArrayList<String> oLabels = new ArrayList<String>();
         
-        oLabels.add("bot");
-        oLabels.add("human");
+        oLabels.add("yes");
+        oLabels.add("no");
         
         return oLabels;
     }
@@ -326,13 +329,13 @@ public class PAN19_bots {
     public Hashtable<String, String> LoadTruth(String sDataPath) throws FileNotFoundException, IOException {
         Hashtable<String, String> oTruth = new Hashtable<String, String>();
         
-        FileReader fr = new FileReader(sDataPath + "/truth.txt");
+        FileReader fr = new FileReader(sDataPath + "/" + mBotType + ".txt");
         BufferedReader bf = new BufferedReader(fr);
         String sCadena = "";
 
         while ((sCadena = bf.readLine())!=null) {
             String []data = sCadena.split(":::");
-            if (data.length==3) {
+            if (data.length==2) {
                 oTruth.put(data[0], data[1]);
             }
         }
@@ -350,10 +353,12 @@ public class PAN19_bots {
         System.out.println("Loading corpus (" + authors.length + " files)...");
         for (int iAuthor = 0; iAuthor < authors.length; iAuthor++) {
             String sAuthor = authors[iAuthor].replace(".xml", "");
-            String sClass = (String)oTruth.get(sAuthor);
-            sb.append(LoadFileContents(path2Corpus + sAuthor)).append(" ");
+            if (oTruth.containsKey(sAuthor)) {
+                String sClass = (String)oTruth.get(sAuthor);
+                sb.append(LoadFileContents(path2Corpus + sAuthor)).append(" ");
             
-            System.out.println("-->" + (iAuthor+1) + "/" + authors.length);
+                System.out.println("-->" + (iAuthor+1) + "/" + authors.length);
+            }
         }
         System.out.println(sb.length() + " characters loaded");
         return sb.toString();
