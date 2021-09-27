@@ -91,7 +91,8 @@ public class GenerateVectorSpaceModel {
         while (keys.hasMoreElements()) {
             String key = (String)keys.nextElement();
             double iVal = mDoc.get(key);
-            mDoc.put(key, iVal/iTokens);
+//            mDoc.put(key, iVal/iTokens);
+            mDoc.put(key, (double)((double)iVal/(double)oMyNGrams.size()));
         }
     }
     
