@@ -146,7 +146,7 @@ public class Tools {
             content = Tools.removeWhitespaces(content);
         }
         
-        if (prepOpt.stopwords.length>=0) {
+        if (prepOpt.stopwords.length>0) {
             content = Tools.removeStopWords(content, prepOpt.stopwords);
         }
         
@@ -186,7 +186,7 @@ public class Tools {
 
         return oNGrams;
     }
-    
+       
     private static Hashtable<String, Integer> LoadCharnGrams(String corpus, int n) {
         Hashtable<String, Integer> oNGrams = new Hashtable<String, Integer>();
         for (int c=0;c<corpus.length()- n;c++) {
