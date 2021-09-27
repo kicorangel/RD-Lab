@@ -7,10 +7,10 @@
 package com.kicorangel.repr.ldse.Predictors;
 
 import com.kicorangel.repr.ldse.GenerateVectorSpaceModel;
-import com.kicorangel.repr.ldse.Datasets.PAN_AP_19_bots;
 import java.io.IOException;
 import java.util.ArrayList;
 import com.kicorangel.repr.common.Prediction;
+import com.kicorangel.repr.ldse.Datasets.PAN_AP_20;
 import com.kicorangel.repr.ldse.Predictors.Eval.Info;
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
@@ -24,17 +24,17 @@ import weka.core.Instance;
  *
  * @author @kicorangel
  */
-public class BotsPredictor implements iPredictor {
+public class FakersPredictor implements iPredictor {
     private ArrayList<String> mLabels;
     private Classifier mClassifier;
     private GenerateVectorSpaceModel mVSM;
     
-    public BotsPredictor(String ldsePath, String modelPath, int minFreq, int minSize, int version) throws IOException, Exception {
+    public FakersPredictor(String ldsePath, String modelPath, int minFreq, int minSize, int version) throws IOException, Exception {
         InstantiatePredictor(ldsePath, modelPath, minFreq, minSize, version);
     }
     
     public void InstantiatePredictor(String ldsePath, String modelPath, int minFreq, int minSize, int version) throws IOException {
-        PAN_AP_19_bots Profiler = new PAN_AP_19_bots(minFreq, minSize, "", ldsePath, "", "", "", version);
+        PAN_AP_20 Profiler = new PAN_AP_20(minFreq, minSize, "", ldsePath, "", "", "", version);
         mLabels = Profiler.GetLabels();
         mClassifier = ClassifierMngr.LoadClassifier(modelPath);
         mVSM = new GenerateVectorSpaceModel(mLabels, ldsePath, minSize, version);
@@ -67,9 +67,11 @@ public class BotsPredictor implements iPredictor {
         String sPredictionGroup = "";
         
         if (prediction==0) {
-            sPredictionGroup = "bot"; 
+            sPredictionGroup = "faker"; 
+//            sPredictionGroup = "0";
         } else if (prediction==1) {    
-            sPredictionGroup = "human";
+            sPredictionGroup = "normal";
+//            sPredictionGroup = "1";
         } 
         
         return sPredictionGroup;
@@ -93,8 +95,6 @@ public class BotsPredictor implements iPredictor {
 
         while ((sCadena = bf.readLine())!=null)
         {
-            // userid:::gender:::variety
-
             String []data = sCadena.split(":::");
             
             try
@@ -107,7 +107,8 @@ public class BotsPredictor implements iPredictor {
                 Info info = new Info();
                 info.User = data[0];
                 info.Lang = lang;
-                info.Type = data[1]; // .replaceAll("M", "male").replace("F", "female");
+                info.Type = (data[1].equals("0")?"normal":"faker"); 
+//                info.Type = data[1];
 
                 oTruth.put(sUser, info);
             }
