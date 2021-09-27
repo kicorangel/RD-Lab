@@ -67,9 +67,9 @@ public class TwitterTimelineRetrieval {
         for (int iTimeline=0;iTimeline<oTimelines.size();iTimeline++) {
             TwitterTimeline oTimeline = oTimelines.get(iTimeline);
             
-            if (new File(sPath + "/" + oTimeline.UserName).exists()) {
-                continue;
-            }
+//            if (new File(sPath + "/" + oTimeline.UserName).exists()) {
+//                continue;
+//            }
             
             List<Status> statuses;
             try {
