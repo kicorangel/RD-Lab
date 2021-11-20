@@ -9,6 +9,7 @@ import com.kicorangel.repr.enumerations.NGRAMTYPE;
 import com.kicorangel.repr.enumerations.PreprocessingOptions;
 import com.kicorangel.repr.enumerations.SET;
 import com.kicorangel.repr.nGrams.Datasets.PAN19_bots;
+import com.kicorangel.repr.nGrams.Datasets.PAN19_bots_metadata;
 import com.kicorangel.repr.nGrams.Datasets.PAN20_fakers;
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -21,7 +22,30 @@ import org.xml.sax.SAXException;
  */
 public class T_PAN_AP_19 {
     public static void Test() throws IOException, FileNotFoundException, ParserConfigurationException, SAXException {
-        PAN19_Atribus();
+        PAN19_MetaData();
+    }
+    
+    private static void PAN19_MetaData() throws IOException, FileNotFoundException, ParserConfigurationException, SAXException {
+        for (int t:new Integer[] {200,500,2000}) {
+            for (NGRAMTYPE ntype:NGRAMTYPE.values()) {
+                for (int n=1;n<=5;n++) {
+                    for (String lang:new String[]{"es","en"}) {
+                        System.out.println("-->Processing " + ntype.toString() + ".n-" + n + ".t-" + t);
+                        String sTraining = "C:\\mnt\\data\\PAN\\datasets\\pan19\\dataset\\pan19-author-profiling-training-2019-02-18\\" + lang + "\\";
+                        String sTrainingMeta = "C:\\mnt\\data\\PAN\\datasets\\pan19\\dataset_with_meta\\Bots - BOTS_TRAINING_" + lang.toUpperCase() + "_META.tsv";
+                        String sTrainingArff = "C:\\mnt\\data\\PAN\\nGrams\\pan19\\arff/train.meta." + lang + "." + ntype.toString() + ".n-" + n + ".t-" + t + ".arff";
+                        String sTest = "C:\\mnt\\data\\PAN\\datasets\\pan19\\dataset\\pan19-author-profiling-test-2019-04-29\\" + lang + "\\";
+                        String sTestMeta = "C:\\mnt\\data\\PAN\\datasets\\pan19\\dataset_with_meta\\Bots - BOTS_TEST_" + lang.toUpperCase() + "_META.tsv";
+                        String sTestArff = "C:\\mnt\\data\\PAN\\nGrams\\pan19\\arff/test.meta." + lang + "." + ntype.toString() + ".n-" + n + ".t-" + t + ".arff";
+                        String sTmp = "C:\\mnt\\data\\PAN\\nGrams\\pan19\\tmp\\tmp.meta." + lang + "." + ntype.toString() + ".n-" + n + ".t-" + t + ".txt";
+
+                        new PAN19_bots_metadata(n, t, ntype, sTraining, sTrainingMeta, sTmp, sTrainingArff, sTest, sTestMeta, sTestArff, 
+                                PAN19_bots_metadata.GetLabels(), SET.BOTH, 
+                                new PreprocessingOptions(true, false, false, false, 0, new String[0])).Run();
+                    }
+                }
+            }
+        }
     }
     
     private static void PAN19_Atribus() throws IOException, FileNotFoundException, ParserConfigurationException, SAXException {
