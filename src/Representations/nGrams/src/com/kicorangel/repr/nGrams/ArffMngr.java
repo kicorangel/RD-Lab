@@ -15,10 +15,18 @@ import java.util.ArrayList;
  */
 public class ArffMngr {
     public static void GenerateHeader(ArrayList<String> nGrams, ArrayList<String> classes, String type, int n, int total, FileWriter fw) {
+        GenerateHeader(nGrams, new ArrayList<String>(), classes, type, n, total, fw);
+    }
+    
+    public static void GenerateHeader(ArrayList<String> nGrams, ArrayList<String> custom, ArrayList<String> classes, String type, int n, int total, FileWriter fw) {
         try {
             fw.write("@relation '" + type + "-" + total + "-" + n + "-grams-by-@kicorangel'\n");
             for (int i=0;i<nGrams.size();i++) {
                 fw.write("@attribute '" + CleanToken(nGrams.get(i), type, i) + "' real\n");
+            }
+            
+            for (int i=0;i<custom.size();i++) {
+                fw.write("@attribute 'Custom-" + custom.get(i) + "' real\n");
             }
             
             fw.write("@attribute 'class' {");

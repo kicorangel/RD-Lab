@@ -30,6 +30,10 @@ public class GenerateVectorSpaceModel {
     private String mNGramsPath;
     
     private ArrayList<String> mListOfTerms;
+    
+    private ArrayList<String> mMetaAttributes;
+    private ArrayList<String> mMetaValues;
+    
     private int mN;
     private int mTotal;
     private int mLength;
@@ -42,6 +46,10 @@ public class GenerateVectorSpaceModel {
     private Instance mInstance;
     
     public GenerateVectorSpaceModel(ArrayList<String> labels, String nGramsPath, int n, int total, int length, NGRAMTYPE type,  PreprocessingOptions prepOpt) throws IOException {
+        new GenerateVectorSpaceModel(labels, nGramsPath, n, total, length, type, prepOpt, new ArrayList<String>());
+    }
+    
+    public GenerateVectorSpaceModel(ArrayList<String> labels, String nGramsPath, int n, int total, int length, NGRAMTYPE type,  PreprocessingOptions prepOpt, ArrayList<String> metaAttributes) throws IOException {
         mLabels = labels;
         mN = n;
         mTotal = total;
@@ -49,6 +57,7 @@ public class GenerateVectorSpaceModel {
         mPrepOpt = prepOpt;
         mNGramsPath = nGramsPath;
         mType = type;
+        mMetaAttributes = metaAttributes;
         LoadListOfTerms();
     }
     
@@ -64,8 +73,13 @@ public class GenerateVectorSpaceModel {
         mInstance = null;
     }
     
-    public void Process(String text) throws FileNotFoundException, IOException {
+    public void Process(String text) throws IOException {
+        Process(text, new ArrayList<String>());
+    }
+    
+    public void Process(String text, ArrayList<String> metaValues) throws FileNotFoundException, IOException {
         mText = text;
+        mMetaValues = metaValues;
         Clear();
         ProcessText();
         CreateInstance();
@@ -120,7 +134,7 @@ public class GenerateVectorSpaceModel {
     
     
     private void CreateInstance() {
-        int nAttrib = mListOfTerms.size() + 1;
+        int nAttrib = mListOfTerms.size() + mMetaAttributes.size() + 1;
         int nClasses = mLabels.size();
         int iClass = nAttrib - 1;
         try
@@ -132,6 +146,13 @@ public class GenerateVectorSpaceModel {
                 
                 attInfo.addElement(new Attribute(sTerm));
             }
+            
+            for (int i=0;i<mMetaAttributes.size();i++) {
+                String sMetaAttribute = mMetaAttributes.get(i);
+                
+                attInfo.addElement(new Attribute(sMetaAttribute));
+            }
+            
             for (int i=0;i<mLabels.size();i++) {
                 String sLabel = mLabels.get(i);
                 
@@ -153,13 +174,27 @@ public class GenerateVectorSpaceModel {
                     val = mDoc.get(sTerm);
                 }
                 inst.setValue(iAttrib++, val);
-            }            
+            }
+
+            for (int i=0;i<mMetaValues.size();i++) {
+                String sMetaValue = mMetaValues.get(i);
+                double metaVal = getDouble(sMetaValue);
+                inst.setValue(iAttrib++, metaVal);
+            }
 //            inst.setValue(iClass, 0);
             instances.add(inst);
 
             mInstance = instances.instance(0);
         }
         catch (Exception ex) {
+        }
+    }
+    
+    private static double getDouble(String toDouble) {
+        try {
+            return Double.valueOf(toDouble);
+        } catch (Exception ex) {
+            return 0;
         }
     }
 }
