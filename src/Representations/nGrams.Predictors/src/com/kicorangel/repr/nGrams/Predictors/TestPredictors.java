@@ -102,36 +102,54 @@ public class TestPredictors {
 //                "C:\\mnt\\data\\PAN\\datasets\\pan20\\4.dataset\\pan20-author-profiling-test-2020-02-23",
 //                "es");
 
-        Eval.ComplexTest("fakers", new FakersPredictor("C:\\mnt\\data\\PAN\\ngrams\\pan20\\tmp",
-                        "C:\\mnt\\data\\PAN\\ngrams\\pan20\\tmp\\fakers.en.CHAR.n-3.t-1000.txt",
-                        "C:\\mnt\\data\\PAN\\ngrams\\pan20\\models\\fakers.en.CHAR.n3.t1000.RandomForest.model",
-                        NGRAMTYPE.CHAR, 3, 1000, 0), 
-                "C:\\mnt\\data\\PAN\\datasets\\pan20\\4.dataset\\pan20-author-profiling-test-2020-02-23",
+//        Eval.ComplexTest("fakers", new FakersPredictor("C:\\mnt\\data\\PAN\\ngrams\\pan20\\tmp",
+//                        "C:\\mnt\\data\\PAN\\ngrams\\pan20\\tmp\\fakers.en.CHAR.n-3.t-1000.txt",
+//                        "C:\\mnt\\data\\PAN\\ngrams\\pan20\\models\\fakers.en.CHAR.n3.t1000.RandomForest.model",
+//                        NGRAMTYPE.CHAR, 3, 1000, 0), 
+//                "C:\\mnt\\data\\PAN\\datasets\\pan20\\4.dataset\\pan20-author-profiling-test-2020-02-23",
+//                "en");
+//        
+//        Eval.ComplexTest("fakers", 
+//                new FakersPredictor("C:\\mnt\\data\\PAN\\ngrams\\pan20\\tmp",
+//                        "C:\\mnt\\data\\PAN\\ngrams\\pan20\\tmp\\fakers.en.WORD.n-2.t-1000.txt",
+//                        "C:\\mnt\\data\\PAN\\ngrams\\pan20\\models\\fakers.en.WORD.n2.t1000.RandomForest.model",
+//                        NGRAMTYPE.WORD, 2, 1000, 0), 
+//                "C:\\mnt\\data\\PAN\\datasets\\pan20\\4.dataset\\pan20-author-profiling-test-2020-02-23",
+//                "en");
+//        
+//        Eval.ComplexTest("fakers", 
+//                new FakersPredictor("C:\\mnt\\data\\PAN\\ngrams\\pan20\\tmp",
+//                        "C:\\mnt\\data\\PAN\\ngrams\\pan20\\tmp\\fakers.es.CHAR.n-5.t-1000.txt",
+//                        "C:\\mnt\\data\\PAN\\ngrams\\pan20\\models\\fakers.es.CHAR.n5.t1000.SGD.model",
+//                        NGRAMTYPE.CHAR, 5, 1000, 0), 
+//                "C:\\mnt\\data\\PAN\\datasets\\pan20\\4.dataset\\pan20-author-profiling-test-2020-02-23",
+//                "es");
+//        
+//        Eval.ComplexTest("fakers", 
+//                new FakersPredictor("C:\\mnt\\data\\PAN\\ngrams\\pan20\\tmp",
+//                        "C:\\mnt\\data\\PAN\\ngrams\\pan20\\tmp\\fakers.es.WORD.n-1.t-1000.txt",
+//                        "C:\\mnt\\data\\PAN\\ngrams\\pan20\\models\\fakers.es.WORD.n1.t1000.SGD.model",
+//                        NGRAMTYPE.WORD, 1, 1000, 0), 
+//                "C:\\mnt\\data\\PAN\\datasets\\pan20\\4.dataset\\pan20-author-profiling-test-2020-02-23",
+//                "es");
+
+//        Eval.SimpleTest(
+//                new BotsPredictorWithMetadata("C:\\mnt\\data\\PAN\\ngrams\\pan19\\tmp",
+//                        "C:\\mnt\\data\\PAN\\ngrams\\pan19\\tmp\\bots.meta.en.WORD.n-1.t-100.txt", 
+//                        "C:\\mnt\\data\\PAN\\ngrams\\pan19\\models\\bots.meta.en.WORD.n1.t100.RandomForest.model",
+//                        NGRAMTYPE.WORD, 1, 100, 0),  
+//                "C:\\mnt\\data\\PAN\\datasets\\pan19\\dataset\\pan19-author-profiling-test-2019-04-29", 
+//                "C:\\mnt\\data\\PAN\\datasets\\pan19\\dataset_with_meta\\Bots - BOTS_TEST_EN_META.tsv",
+//                "en");
+        
+        Eval.ComplexTest("bots",
+                new BotsPredictorWithMetadata("C:\\mnt\\data\\PAN\\ngrams\\pan19\\tmp",
+                        "C:\\mnt\\data\\PAN\\ngrams\\pan19\\tmp\\bots.meta.en.CHAR.n-4.t-100.txt", 
+                        "C:\\mnt\\data\\PAN\\ngrams\\pan19\\models\\bots.meta.en.CHAR.n4.t100.RandomForest.model",
+                        NGRAMTYPE.CHAR, 4, 100, 0),  
+                "C:\\mnt\\data\\PAN\\datasets\\pan19\\dataset\\pan19-author-profiling-test-2019-04-29", 
+                "C:\\mnt\\data\\PAN\\datasets\\pan19\\dataset_with_meta\\Bots - BOTS_TEST_EN_META.tsv",
                 "en");
-        
-        Eval.ComplexTest("fakers", 
-                new FakersPredictor("C:\\mnt\\data\\PAN\\ngrams\\pan20\\tmp",
-                        "C:\\mnt\\data\\PAN\\ngrams\\pan20\\tmp\\fakers.en.WORD.n-2.t-1000.txt",
-                        "C:\\mnt\\data\\PAN\\ngrams\\pan20\\models\\fakers.en.WORD.n2.t1000.RandomForest.model",
-                        NGRAMTYPE.WORD, 2, 1000, 0), 
-                "C:\\mnt\\data\\PAN\\datasets\\pan20\\4.dataset\\pan20-author-profiling-test-2020-02-23",
-                "en");
-        
-        Eval.ComplexTest("fakers", 
-                new FakersPredictor("C:\\mnt\\data\\PAN\\ngrams\\pan20\\tmp",
-                        "C:\\mnt\\data\\PAN\\ngrams\\pan20\\tmp\\fakers.es.CHAR.n-5.t-1000.txt",
-                        "C:\\mnt\\data\\PAN\\ngrams\\pan20\\models\\fakers.es.CHAR.n5.t1000.SGD.model",
-                        NGRAMTYPE.CHAR, 5, 1000, 0), 
-                "C:\\mnt\\data\\PAN\\datasets\\pan20\\4.dataset\\pan20-author-profiling-test-2020-02-23",
-                "es");
-        
-        Eval.ComplexTest("fakers", 
-                new FakersPredictor("C:\\mnt\\data\\PAN\\ngrams\\pan20\\tmp",
-                        "C:\\mnt\\data\\PAN\\ngrams\\pan20\\tmp\\fakers.es.WORD.n-1.t-1000.txt",
-                        "C:\\mnt\\data\\PAN\\ngrams\\pan20\\models\\fakers.es.WORD.n1.t1000.SGD.model",
-                        NGRAMTYPE.WORD, 1, 1000, 0), 
-                "C:\\mnt\\data\\PAN\\datasets\\pan20\\4.dataset\\pan20-author-profiling-test-2020-02-23",
-                "es");
     }
     
 }

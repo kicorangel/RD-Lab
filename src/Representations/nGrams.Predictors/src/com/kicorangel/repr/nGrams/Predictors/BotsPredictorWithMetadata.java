@@ -10,10 +10,11 @@ import com.kicorangel.repr.enumerations.NGRAMTYPE;
 import com.kicorangel.repr.enumerations.PreprocessingOptions;
 import com.kicorangel.repr.enumerations.SET;
 import com.kicorangel.repr.nGrams.GenerateVectorSpaceModel;
+import com.kicorangel.repr.nGrams.Datasets.PAN19_bots;
 import java.io.IOException;
 import java.util.ArrayList;
 import com.kicorangel.repr.common.Prediction;
-import com.kicorangel.repr.nGrams.Datasets.BotType;
+import com.kicorangel.repr.nGrams.Datasets.PAN19_bots_metadata;
 import static com.kicorangel.repr.nGrams.Predictors.ClassifierMngr.LoadClassifier;
 import com.kicorangel.repr.nGrams.Predictors.Eval.Info;
 import java.io.BufferedReader;
@@ -22,40 +23,46 @@ import java.io.FileReader;
 import java.net.URISyntaxException;
 import java.util.Hashtable;
 import weka.classifiers.Classifier;
+import weka.core.DenseInstance;
 import weka.core.Instance;
 
 /**
  *
  * @author @kicorangel
  */
-public class BotsTypePredictor implements iPredictor{
+public class BotsPredictorWithMetadata implements iPredictor{
     private ArrayList<String> mLabels;
     private Classifier mClassifier;
     private GenerateVectorSpaceModel mVSM;
-    private String mBotType;
-        
-    public BotsTypePredictor(String botType, String nGramsPath, String nGramsFile, String modelPath, NGRAMTYPE nGramsType, int n, int total, int length) throws IOException, Exception {
-        mBotType = botType;
+    
+    public BotsPredictorWithMetadata(String nGramsPath, String nGramsFile, String modelPath, NGRAMTYPE nGramsType, int n, int total, int length) throws IOException, Exception {
         InstantiatePredictor(nGramsPath, nGramsFile, modelPath, nGramsType, n, total, length);
     }
     
     public void InstantiatePredictor(String nGramsPath, String nGramsFile, String modelPath, NGRAMTYPE nGramsType, int n, int total, int length) throws IOException {
-        BotType oPredictor = new BotType(mBotType, n, total, nGramsType, "", nGramsPath, "", "", "", BotType.GetLabels(), SET.BOTH, 
+        PAN19_bots_metadata oPredictor = new PAN19_bots_metadata(n, total, nGramsType, "", "", nGramsPath, "", "", "", "", PAN19_bots.GetLabels(), SET.BOTH, 
                             new PreprocessingOptions(true, false, true, false, length, new String[0]));
         mLabels = oPredictor.GetLabels();
         mClassifier = LoadClassifier(modelPath);
-        mVSM = new GenerateVectorSpaceModel(mLabels, nGramsFile, n, total, length, nGramsType, new PreprocessingOptions(true, false, true, false, length, new String[0]));
+        ArrayList<String> oMetaAttributes = new ArrayList<String>();
+        oMetaAttributes.add("Custom-FriendsFollowers");
+        oMetaAttributes.add("Custom-ListsFollowers");
+        oMetaAttributes.add("Custom-FriendsDaysSinceCreation");
+        oMetaAttributes.add("Custom-FollowersDaysSinceCreation");
+        oMetaAttributes.add("Custom-ListsDaysSinceCreation");
+        oMetaAttributes.add("Custom-Verified");
+        mVSM = new GenerateVectorSpaceModel(mLabels, nGramsFile, n, total, length, nGramsType, new PreprocessingOptions(true, false, true, false, length, new String[0]), oMetaAttributes);
     }
     
     public Prediction Predict(String text) {
         return Predict(text, new ArrayList<String>());
     }
-        
-    public Prediction Predict(String text, ArrayList<String> metaData) {
+    
+    public Prediction Predict(String text, ArrayList<String> metaValues) {
         Prediction prediction = new Prediction();
         
         try {
-            mVSM.Process(text);
+            mVSM.Process(text, metaValues);
             Instance inst = mVSM.GetInstance();
             prediction.PredictedClass = mClassifier.classifyInstance(inst); 
             prediction.ConfidenceValues = mClassifier.distributionForInstance(inst);
@@ -78,36 +85,63 @@ public class BotsTypePredictor implements iPredictor{
         String sPredictionGroup = "";
         
         if (prediction==0) {
-            sPredictionGroup = "yes"; 
+            sPredictionGroup = "bot"; 
         } else if (prediction==1) {    
-            sPredictionGroup = "no";
+            sPredictionGroup = "human";
         } 
         
         return sPredictionGroup;
     }
     
-    public Hashtable<String, Info> LoadTruth(String truthPath, String lang) throws FileNotFoundException, IOException, URISyntaxException {
-        Hashtable<String, Info> oTruth = new Hashtable<String, Info>();
+    public Hashtable<String, Info> LoadTruth(String truthPath, String lang) throws FileNotFoundException, IOException, URISyntaxException
+    {
+        Hashtable<String, Info>oTruth = new Hashtable<String, Info>();
         
-        FileReader fr = new FileReader(truthPath + "/" + lang + "/" + mBotType + ".txt");
+        FileReader fr = null;
+        
+        if (!truthPath.endsWith("/")) {
+            truthPath+="/";
+        }
+        
+        truthPath += lang;
+        fr = new FileReader(truthPath + "/truth.txt");
+        
         BufferedReader bf = new BufferedReader(fr);
         String sCadena = "";
 
-        while ((sCadena = bf.readLine())!=null) {
+        while ((sCadena = bf.readLine())!=null)
+        {
+            // userid:::gender:::variety
+
             String []data = sCadena.split(":::");
-            if (data.length==2) {
+            
+            try
+            {
+                String sUser = data[0];
                 Info oInfo = new Info();
-                oInfo.Lang = lang;
-                oInfo.User = data[0];
-                oInfo.Type = data[1];
-                oTruth.put(data[0], oInfo);
+                if (oTruth.containsKey(sUser)) {
+                    oInfo = oTruth.get(sUser);
+                }
+                Info info = new Info();
+                info.User = data[0];
+                info.Lang = lang;
+                info.Type = data[1]; // .replaceAll("M", "male").replace("F", "female");
+
+                oTruth.put(sUser, info);
+            }
+            catch (Exception ex)
+            {
+                String s = ex.toString();
             }
         }
-    
+        
+        bf.close();
+        fr.close();
+        
         return oTruth;
     }
     
     public Hashtable<String, String> LoadMeta(String metaPath) throws FileNotFoundException, IOException {
-        return new Hashtable<String, String>();
+        return PAN19_bots_metadata.LoadMeta(metaPath);
     }
 }

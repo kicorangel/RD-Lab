@@ -19,6 +19,7 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.net.URISyntaxException;
+import java.util.ArrayList;
 import java.util.Hashtable;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
@@ -40,11 +41,19 @@ public class Eval {
     private static int NTWEETS = 100;
     
     public static void SimpleTest(iPredictor predictor, String TEST, String LANG) throws Exception{
-        Hashtable<String, Info> oTruth = predictor.LoadTruth(TEST, LANG);
-        System.out.print(SimpleTest(predictor, oTruth, 100, 0, TEST, LANG));
+        SimpleTest(predictor, TEST, LANG, "");
     }
     
-    private static String SimpleTest(iPredictor predictor, Hashtable<String, Info> oTruth, int nTweets, int firstTweet, String TEST, String LANG) throws Exception {
+    public static void SimpleTest(iPredictor predictor, String TEST, String META, String LANG) throws Exception{
+        Hashtable<String, Info> oTruth = predictor.LoadTruth(TEST, LANG);
+        Hashtable<String, String> oMetaValues = new Hashtable<String, String>();
+        if (!META.isEmpty()) {
+            oMetaValues = predictor.LoadMeta(META);
+        }
+        System.out.print(SimpleTest(predictor, oTruth, 100, 0, TEST, LANG, oMetaValues));
+    }
+    
+    private static String SimpleTest(iPredictor predictor, Hashtable<String, Info> oTruth, int nTweets, int firstTweet, String TEST, String LANG, Hashtable<String, String> metaValues) throws Exception {
         File directory = new File(TEST + "/" + LANG);
         File []files = directory.listFiles();
         
@@ -92,8 +101,22 @@ public class Eval {
                 
                 if (oTruth.containsKey(sId)) {
                     sClass = oTruth.get(sId).Type;
+                    
+                    ArrayList<String> oMetaValues = new ArrayList<String>();
+                    Prediction oPrediction = new Prediction();
+                            
+                    if (metaValues.containsKey(sId)) {
+                        String sData = (String)metaValues.get(sId);
+                        String []oData = sData.split("\t");
+                        
+                        for (int iMD=3;iMD<oData.length;iMD++) {
+                            oMetaValues.add(oData[iMD]);
+                        }
+                        oPrediction = predictor.Predict(sToPredict, oMetaValues);
+                    }
+                    
     //                System.out.println(sId + "->" + sClass);
-                    Prediction oPrediction = predictor.Predict(sToPredict);
+                    
                     if (oPrediction.sPredictedClass.equalsIgnoreCase(sClass)) {
                         accuracy++;
                     }
@@ -105,32 +128,12 @@ public class Eval {
         return String.format("%.4f", accuracy);
     }
     
-    public static void ComplexTest(String name, iPredictor predictor, String TEST, String LANG) throws Exception {
-        
-//        String lang = "es";
-//        int t = 2000;
-//        int n = 5;
-//        NGRAMTYPE ntype = NGRAMTYPE.CHAR;
-//        String sCorpusPath = "/mnt/data/PAN/datasets/pan19/dataset/pan19-author-profiling-training-2019-02-18/" + lang + "/";
-//        
-//        String sTrainingArff = "/mnt/data/PAN/ngrams/pan19/arff/training_kico.bots." + lang + "." + ntype.toString() + ".n" + n + ".t" + t + ".arff";
-//        
-//        String sTmpPath = "C:\\mnt\\data\\PAN\\ngrams\\pan19\\tmp\\bots." + lang + "." + ntype.toString() + ".n" + n + ".t" + t + ".txt";
-//        String sTestPath = "/mnt/data/PAN/datasets/pan19/dataset/pan19-author-profiling-test-2019-04-29/" + lang + "/";
-//        String sTestArff = "/mnt/data/PAN/ngrams/pan19/arff/test_kico.bots." + lang + "." + ntype.toString() + ".n" + n + ".t" + t + ".arff";
-        
-        
-//        new PAN19_bots(n, t, ntype, sCorpusPath, sTmpPath, sTrainingArff, sTestPath, sTestArff, PAN19_bots.GetLabels(), SET.TEST, new PreprocessingOptions(true, false, true, false, 1, new String[0]))
-//                .Run();
-        
-        
-//        BotsPredictor predictor = new BotsPredictor(NGRAMS_PATH, 
-//            NGRAMS,
-//                MODEL,
-//                nGramType, N, total, length);
-//        
+    public static void ComplexTest(String name, iPredictor predictor, String TEST, String META, String LANG) throws Exception {
         Hashtable<String, Info> oTruth = predictor.LoadTruth(TEST, LANG);
-//        System.out.print(SimpleTest(predictor, oTruth, 100, 1, LANG));
+        Hashtable<String, String> oMetaValues = new Hashtable<String, String>();
+        if (!META.isEmpty()) {
+            oMetaValues = predictor.LoadMeta(META);
+        }
         
         for (int iTweets=INI;iTweets<=NTWEETS;iTweets++) {
             System.out.print(name + "_" + LANG + "_" + iTweets + " <- c(");
@@ -138,78 +141,9 @@ public class Eval {
                 if (iPos>1) {
                     System.out.print(",");
                 }
-                System.out.print(SimpleTest(predictor, oTruth, iTweets, iPos, TEST, LANG));
+                System.out.print(SimpleTest(predictor, oTruth, iTweets, iPos, TEST, LANG, oMetaValues));
             }
             System.out.println(")");
         }
-            
-    }
-    
-    
-    
-//    private static Hashtable<String, Info> LoadTruth(String truthPath, String lang) throws FileNotFoundException, IOException, URISyntaxException
-//    {
-//        Hashtable<String, Info>oTruth = new Hashtable<String, Info>();
-//        
-//        FileReader fr = null;
-//        
-//        if (!truthPath.endsWith("/")) {
-//            truthPath+="/";
-//        }
-//        
-//        truthPath += lang;
-//        
-////        if (truthPath.contains("training")) {
-//            fr = new FileReader(truthPath + "/truth.txt");
-////        } else {
-////            fr = new FileReader(truthPath + ".txt");
-////        }
-//        
-//        
-//        BufferedReader bf = new BufferedReader(fr);
-//        String sCadena = "";
-//
-//        while ((sCadena = bf.readLine())!=null)
-//        {
-//            // userid:::gender:::variety
-//
-//            String []data = sCadena.split(":::");
-//            
-//            try
-//            {
-//                String sUser = data[0];
-//                Info oInfo = new Info();
-//                if (oTruth.containsKey(sUser)) {
-//                    oInfo = oTruth.get(sUser);
-//                }
-//                Info info = new Info();
-//                info.User = data[0];
-//                info.Lang = lang;
-//                info.Type = data[1]; // .replaceAll("M", "male").replace("F", "female");
-//
-//                oTruth.put(sUser, info);
-//            }
-//            catch (Exception ex)
-//            {
-//                String s = ex.toString();
-//            }
-//        }
-//        
-//        bf.close();
-//        fr.close();
-//        
-//        return oTruth;
-//    }
-    
-    
-    public static void BasicTest() throws Exception {
-//        BotsPredictor predictor = new BotsPredictor("C:\\mnt\\data\\PAN\\ldr\\pan19\\data\\es.mf10.ms1.v1", 
-//            "C:\\mnt\\data\\PAN\\ldr\\pan19\\models\\bots.es.mf10.ms1.v1.NaiveBayes.model",
-//            10, 1, 1);
-//        
-//        Prediction oPrediction = predictor.Predict(GetTweetsFromFile("C:\\mnt\\data\\PAN\\datasets\\pan19\\dataset\\pan19-author-profiling-test-2019-04-29\\es\\1a4a00c01aaed1eebb72e3a3d9850bf2.xml")); // human
-//        System.out.println(oPrediction.sPredictedClass + "(" + oPrediction.sConfidence + ")");
-//        oPrediction = predictor.Predict(GetTweetsFromFile("C:\\mnt\\data\\PAN\\datasets\\pan19\\dataset\\pan19-author-profiling-test-2019-04-29\\es\\3ad4a95c4fa92d34c24f0a1491c1d62f.xml")); // bot
-//        System.out.println(oPrediction.sPredictedClass + "(" + oPrediction.sConfidence + ")");
     }
 }

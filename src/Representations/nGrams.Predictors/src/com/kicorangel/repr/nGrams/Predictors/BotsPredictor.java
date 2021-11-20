@@ -14,6 +14,7 @@ import com.kicorangel.repr.nGrams.Datasets.PAN19_bots;
 import java.io.IOException;
 import java.util.ArrayList;
 import com.kicorangel.repr.common.Prediction;
+import com.kicorangel.repr.nGrams.Datasets.PAN19_bots_metadata;
 import static com.kicorangel.repr.nGrams.Predictors.ClassifierMngr.LoadClassifier;
 import com.kicorangel.repr.nGrams.Predictors.Eval.Info;
 import java.io.BufferedReader;
@@ -46,6 +47,10 @@ public class BotsPredictor implements iPredictor{
     }
     
     public Prediction Predict(String text) {
+        return Predict(text, new ArrayList<String>());
+    }
+    
+    public Prediction Predict(String text, ArrayList<String> metaData) {
         Prediction prediction = new Prediction();
         
         try {
@@ -126,5 +131,9 @@ public class BotsPredictor implements iPredictor{
         fr.close();
         
         return oTruth;
+    }
+    
+    public Hashtable<String, String> LoadMeta(String metaPath) throws FileNotFoundException, IOException {
+        return new Hashtable<String, String>();
     }
 }

@@ -46,6 +46,10 @@ public class FakersPredictor implements iPredictor {
     }
     
     public Prediction Predict(String text) {
+        return Predict(text, new ArrayList<String>());
+    }
+        
+    public Prediction Predict(String text, ArrayList<String> metaData) {
         Prediction prediction = new Prediction();
         
         try {
@@ -127,5 +131,9 @@ public class FakersPredictor implements iPredictor {
         fr.close();
         
         return oTruth;
+    }
+    
+    public Hashtable<String, String> LoadMeta(String metaPath) throws FileNotFoundException, IOException {
+        return new Hashtable<String, String>();
     }
 }

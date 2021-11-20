@@ -11,6 +11,7 @@ import com.kicorangel.repr.nGrams.Predictors.Eval.Info;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.net.URISyntaxException;
+import java.util.ArrayList;
 import java.util.Hashtable;
 
 /**
@@ -19,7 +20,7 @@ import java.util.Hashtable;
  */
 public interface iPredictor {
     public void InstantiatePredictor(String nGramsPath, String nGramsFile, String modelPath, NGRAMTYPE nGramsType, int n, int total, int length) throws IOException;
-    public Prediction Predict(String text);
+    public Prediction Predict(String text, ArrayList<String> metaData);
     public Hashtable<String, Info> LoadTruth(String truthPath, String lang) throws FileNotFoundException, IOException, URISyntaxException;
-    
+    public Hashtable<String, String> LoadMeta(String metaPath) throws FileNotFoundException, IOException;
 }
